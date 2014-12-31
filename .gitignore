@@ -24,3 +24,30 @@ proguard/
 
 # Log Files
 *.log
+*/target
+target
+tmp
+*~
+bin
+*.apk
+out
+*/test-output
+temp-testng-customsuite.xml
+**pom.xml.releaseBackup
+release.properties
+gen
+*/seed.txt
+notes
+logs
+gen-external-apklibs
+.idea
+*.iml
+.DS_Store
+*.swp
+**/*.classpath
+**/*.project
+*.apklib
+build
+.gradle
+local.properties
+classes
