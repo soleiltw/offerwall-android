@@ -1,4 +1,4 @@
-package tw.soleil.offerwall.Adapter;
+package tw.soleil.offerwall.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -54,6 +54,14 @@ public class WallAdapter extends ArrayAdapter<Wall> {
         TextView offerTitleTextView = (TextView)rootView.findViewById(R.id.wall_offer_title_text_view);
         Offer offer = (Offer)currentWall.getOfferPointer();
         offerTitleTextView.setText(offer.getTitle());
+
+        TextView statusTitleTextView = (TextView)rootView.findViewById(R.id.wall_status_text_view);
+        if ("android.intent.action.PACKAGE_ADDED".equals(currentWall.getStatus())) {
+            statusTitleTextView.setText("完成");
+        }
+        if ("Tap Want to Install".equals(currentWall.getStatus())) {
+            statusTitleTextView.setText("進行中");
+        }
 
         return rootView;
     }

@@ -4,6 +4,7 @@ import android.app.Application;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
+import com.parse.ParseUser;
 import tw.soleil.offerwall.object.parse.Action;
 import tw.soleil.offerwall.object.parse.Offer;
 import tw.soleil.offerwall.object.parse.Wall;
@@ -18,10 +19,12 @@ public class MainApplication extends Application {
         super.onCreate();
 
         // Parse
+//        Parse.enableLocalDatastore(getApplicationContext());
         Parse.initialize(this, ParseSettings.APP_ID, ParseSettings.CLIENT_KEY);
         ParseObject.registerSubclass(Action.class);
         ParseObject.registerSubclass(Wall.class);
         ParseObject.registerSubclass(Offer.class);
+        ParseUser.enableAutomaticUser();
 
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }

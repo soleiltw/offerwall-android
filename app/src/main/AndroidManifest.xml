@@ -10,9 +10,9 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:name=".MainApplication"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/Theme.Offerwall" >
         <activity
-            android:name=".Activity.MainActivity"
+            android:name=".activity.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +20,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+	    
+	    <activity android:name=".activity.SettingsActivity"
+		    android:label="Settings"
+		    />
+
+	    <activity android:name="com.parse.ui.ParseLoginActivity" >
+	    <meta-data
+		    android:name="com.parse.ui.ParseLoginActivity.PARSE_LOGIN_ENABLED"
+		    android:value="true"/>
+		    <meta-data
+			    android:name="com.parse.ui.ParseLoginActivity.FACEBOOK_LOGIN_ENABLED"
+			    android:value="true"/>
+		    <meta-data
+			    android:name="com.parse.ui.ParseLoginActivity.TWITTER_LOGIN_ENABLED"
+			    android:value="true"/>
+	    </activity>
+
+	    <activity android:name="com.facebook.LoginActivity" />
+
+	    <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
 
 	    <receiver android:name=".service.InstallerReceiver" >
 		    <intent-filter>

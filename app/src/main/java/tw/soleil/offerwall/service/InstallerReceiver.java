@@ -5,12 +5,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
+import com.parse.ParseUser;
 import tw.soleil.offerwall.object.parse.Action;
 
 /**
  * Created by edward_chiang on 14/12/31.
  */
 public class InstallerReceiver extends BroadcastReceiver {
+
+    private static final String SKIP_PACKAGE = "tw.soleil.offerwall";
 
     public InstallerReceiver() {
         Log.d("OfferWall", "Constructor called.");
@@ -56,13 +59,18 @@ public class InstallerReceiver extends BroadcastReceiver {
         Uri data = intent.getData();
         String pkgName = data.getEncodedSchemeSpecificPart();
 
-        if (Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction()) ||
+        if ((Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction()) ||
                 Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())
-                ) {
+                )
+                && !pkgName.equalsIgnoreCase(SKIP_PACKAGE)) {
             Log.i("OfferWall", "intent.getAction(). " + pkgName);
             Action action = new Action();
             action.setType(intent.getAction());
             action.setValue(pkgName);
+            if (ParseUser.getCurrentUser().isAuthenticated() && ParseUser.getCurrentUser().getObjectId() !=null &&
+                    !"null".equalsIgnoreCase(ParseUser.getCurrentUser().getObjectId())) {
+                action.setUserPointer(ParseUser.getCurrentUser());
+            }
 
             action.saveEventually();
         }

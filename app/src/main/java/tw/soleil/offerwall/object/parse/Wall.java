@@ -10,6 +10,16 @@ import com.parse.ParseObject;
 @ParseClassName("Wall")
 public class Wall extends ParseObject {
 
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getPackageName() {
         return getString("packageName");
     }
