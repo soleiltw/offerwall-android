@@ -1,4 +1,4 @@
-package tw.soleil.core.service;
+package tw.soleil.offerwall.core.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

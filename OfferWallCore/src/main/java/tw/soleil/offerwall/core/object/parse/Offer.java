@@ -1,4 +1,4 @@
-package tw.soleil.core.parse;
+package tw.soleil.offerwall.core.object.parse;
 
 import com.parse.ParseClassName;
 import com.parse.ParseObject;
