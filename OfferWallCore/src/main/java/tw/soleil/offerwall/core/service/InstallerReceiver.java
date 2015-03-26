@@ -60,20 +60,20 @@ public class InstallerReceiver extends BroadcastReceiver {
         Uri data = intent.getData();
         String pkgName = data.getEncodedSchemeSpecificPart();
 
+        Log.i("InstallerReceiver", "onReceive");
+
         if ((Intent.ACTION_PACKAGE_ADDED.equals(intent.getAction()) ||
                 Intent.ACTION_PACKAGE_REMOVED.equals(intent.getAction())
                 )
                 && !pkgName.equalsIgnoreCase(SKIP_PACKAGE)) {
-            Log.i("OfferWall", "intent.getAction(). " + pkgName);
-            Action action = new Action();
-            action.setType(intent.getAction());
-            action.setValue(pkgName);
-            if (ParseUser.getCurrentUser().isAuthenticated() && ParseUser.getCurrentUser().getObjectId() !=null &&
-                    !"null".equalsIgnoreCase(ParseUser.getCurrentUser().getObjectId())) {
-                action.setUserPointer(ParseUser.getCurrentUser());
-            }
 
-            action.saveEventually();
+            // start the UploadActionService to upload action in background
+            // avoiding infinite waiting for saveEventually() to complete
+            Intent ii = new Intent();
+            ii.setAction(intent.getAction());
+            ii.setData(data);
+            ii.setClass(context, UploadActionService.class);
+            context.startService(ii);
         }
     }
 }

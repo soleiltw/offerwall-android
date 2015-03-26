@@ -39,6 +39,8 @@
             </intent-filter>
         </receiver>
 
+        <service android:name=".service.UploadActionService" />
+
 
     </application>
 
