@@ -1,1 +1,1 @@
-include ':OfferWallApp', ':ParseAppUI', ':OfferWallCore'
+include ':OfferWallApp', ':ParseAppUI', ':OfferWallCore', ':demoapp'
