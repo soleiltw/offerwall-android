@@ -33,6 +33,7 @@ import java.util.List;
  * Created by edward_chiang on 15/1/1.
  */
 public class WallFragment extends Fragment {
+    public static final String TAG = "WallFragment";
 
     private List<Wall> wallList;
 
@@ -84,6 +85,12 @@ public class WallFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadObjects();
     }
 
     @Override
