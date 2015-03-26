@@ -8,9 +8,10 @@ import com.parse.ParseInstallation;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-import tw.soleil.core.parse.Action;
-import tw.soleil.core.parse.Offer;
-import tw.soleil.core.parse.Wall;
+import tw.soleil.offerwall.core.object.parse.Action;
+import tw.soleil.offerwall.core.object.parse.Offer;
+import tw.soleil.offerwall.core.object.parse.Wall;
+
 
 /**
  * A Class for test the jar has install successfully.

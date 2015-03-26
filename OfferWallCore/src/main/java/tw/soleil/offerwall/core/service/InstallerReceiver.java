@@ -6,7 +6,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 import com.parse.ParseUser;
-import tw.soleil.core.parse.Action;
+
+import tw.soleil.offerwall.core.object.parse.Action;
 
 /**
  * Created by edward_chiang on 14/12/31.
