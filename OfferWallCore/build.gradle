@@ -25,6 +25,7 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['**/*.jar'])
     compile project(':ParseAppUI')
     compile 'com.android.support:appcompat-v7:21.0.3'
+    compile 'com.koushikdutta.ion:ion:2.0.1'
 }
 
 task clearJar(type: Delete) {

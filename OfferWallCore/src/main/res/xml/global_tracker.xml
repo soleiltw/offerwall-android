@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           tools:ignore="TypographyDashes">
+	<integer name="ga_sessionTimeout">300</integer>
+
+	<integer name="ga_dispatchPeriod">1</integer>
+
+	<!-- Enable automatic Activity measurement -->
+	<bool name="ga_autoActivityTracking">true</bool>
+
+	<!-- The screen names that will appear in reports -->
+	<screenName name="com.google.android.gms.analytics.samples.mobileplayground.ScreenviewFragment">
+		AnalyticsSampleApp ScreenView
+	</screenName>
+	<screenName name="com.google.android.gms.analytics.samples.mobileplayground.EcommerceFragment">
+		AnalyticsSampleApp EcommerceView
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.fragment.campaign.CampaignDtlFragment" >
+		Campaign Detail View
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.fragment.campaign.CampaignImgFragment" >
+		Campaign Image View
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.fragment.campaign.MainCampaignImgFragment" >
+		Main Campaign Image View
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.fragment.orderoptions.OrderOptionFragment" >
+		Order Option View
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.fragment.orderoptions.beginorder.StoreSelectionFragment" >
+		Store Selection View
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.activity.MainActivity" >
+		Main Activity View
+	</screenName>
+
+	<screenName name="tw.soleil.app.nahoodrink.activity.SettingActivity" >
+		Setting Activity View
+	</screenName>
+
+	<!--  The following value should be replaced with correct property id. -->
+	<string name="ga_trackingId">UA-57757631-1</string>
+</resources>
