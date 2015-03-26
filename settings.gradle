@@ -1,1 +1,1 @@
-include ':app', ':offerwallsdk', ':ParseAppUI'
+include ':OfferWallApp', ':ParseAppUI', ':OfferWallCore'
